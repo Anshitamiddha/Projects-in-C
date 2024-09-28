@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+    int random,guess;
+    int no_of_guess=0;
+    srand(time(NULL));
+
+    printf("Welcome to World of Guessing number\n");
+    random = rand() % 100 +1;//generating between 0 to 100
+    
+    do
+    {
+      printf("Pleasse enter your guess(between 1-100)");
+      scanf("%d",&guess);
+      no_of_guess++;
+      if(guess<random)
+      {
+        printf("Guess a larger number\n");
+
+      }
+      else if(guess>random)
+      {
+        printf("GUESS A SMALLER NUMBER\n");
+
+      }
+      else
+      {
+        printf("You have successfully guessed the right number in %d attempts\n",no_of_guess);
+      }
+    }while(guess!=random);
+   printf("Bye Bye,Thanks for playing\n");
+   printf("Developed by :Anshita Middha\n");
+}
